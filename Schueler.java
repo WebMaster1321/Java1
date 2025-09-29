@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.security.sasl.RealmChoiceCallback;
 
+
+
+
+
 public class Schueler extends Person{
     public String klasse;
     private List<Note> notenListe;
@@ -42,6 +46,9 @@ public class Schueler extends Person{
         }
          
         
+    }
+    public void getNoten(notenListe Note){
+        return Note;
     }
 
 

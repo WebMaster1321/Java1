@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,4 +28,17 @@ public class Lehrer extends Person{
 
 
     
+=======
+import java.util.List;
+
+public class Lehrer extends Person{
+    private List<fach> fachListe;
+    public double gehalt;
+
+    public Lehrer(int id, String vorname, String nachname,List<fach> fachListe,double gehalt){
+        super(int id ,String vorname,  )
+    }
+
+    public void addFach()
+>>>>>>> 577c10c29a879cba0f8a8894d9d4a9146026dbae
 }

@@ -27,6 +27,10 @@ public String getUserName(){
 
 }
 
+public BenutzerRolle getRolle(){
+    return rolle;
+}
+
 public String getPasswort(){
     return passwort;
 

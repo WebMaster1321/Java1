@@ -11,6 +11,7 @@ import javax.security.sasl.RealmChoiceCallback;
 public class Schueler extends Person{
     public String klasse;
     private List<Note> notenListe;
+    private String nachname;
     
 
 
@@ -22,6 +23,7 @@ public class Schueler extends Person{
         super(id, vorname, nachname, geburtsdatum);
         this.klasse = klasse;
         this.notenListe = new ArrayList<>();
+        this.nachname = nachname;
 
 
     }
@@ -49,6 +51,8 @@ public class Schueler extends Person{
         return notenListe;
     }
 
-
+    public String getNachname(){
+        return this.nachname;
+    }
 
 }

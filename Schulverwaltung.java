@@ -4,11 +4,18 @@ import java.util.List;
 public class Schulverwaltung {
     private List<Schueler> schuelerListe = new ArrayList<>();
     private List<Lehrer> lehrerListe = new ArrayList<>();
-    private List<Kurs> kursListe = new ArrayList<>();
+    private List<Kurs> kursListe = new ArrayList<>();    
 
+    BenutzerRolle rolleLehrer = BenutzerRolle.LEHRER;
 
-    public void addSchhueler(Schueler schueler){
-        schuelerListe.add(schueler);
+    public void addSchhueler(Schueler schueler,Benutzer benutzer){
+        if (benutzer.getRolle() == rolleLehrer){
+            schuelerListe.add(schueler);
+            System.out.println("Schüler hinzugefügt");
+        }else{
+            System.out.println("Zugriff verweigert: Nur Lehrer dürfen  hinzufügen!");    
+        }
+        
 
     }
 
@@ -42,8 +49,8 @@ public class Schulverwaltung {
         List<Schueler> treffer = new ArrayList<>();
 
 
-        for(schueler s : schuelerListe){
-            if(s.getNachname().equalsIngnoreCase(name)) {
+        for(Schueler s : schuelerListe){
+            if(s.getNachname().equalsIgnoreCase(name)) {
                 treffer.add(s);
             }
         }

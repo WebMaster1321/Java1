@@ -28,6 +28,7 @@ public class Schueler extends Person{
 
     }
 
+<<<<<<< HEAD
     public void addNote(Note note){
         notenListe.add(note);
 
@@ -49,6 +50,31 @@ public class Schueler extends Person{
     
     public List<Note> getNoten(){
         return notenListe;
+=======
+    public void addNote(notenListe Note){
+        notenListe.add(note)
+
+    }
+
+    double summe = 0;
+    int anzahl = 0;
+    public void getDurschnitt(notenListe Note){
+        for Note in notenListe(){
+            summe = summe + Note.getWert();
+            anzahl = anzahl + 1;
+        }
+
+        if (anzahl> 0){
+            return summe / anzahl;
+        } else{
+            return 0;
+        }
+         
+        
+    }
+    public void getNoten(notenListe Note){
+        return Note;
+>>>>>>> 577c10c29a879cba0f8a8894d9d4a9146026dbae
     }
 
     public String getNachname(){

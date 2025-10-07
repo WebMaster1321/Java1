@@ -7,29 +7,50 @@ public class Schulverwaltung {
     private List<Kurs> kursListe = new ArrayList<>();    
 
     BenutzerRolle rolleLehrer = BenutzerRolle.LEHRER;
+    BenutzerRolle rolleAdmin = BenutzerRolle.ADMIN;
 
     public void addSchhueler(Schueler schueler,Benutzer benutzer){
-        if (benutzer.getRolle() == rolleLehrer){
+        if (benutzer.getRolle() == rolleAdmin){
             schuelerListe.add(schueler);
             System.out.println("Schüler hinzugefügt");
         }else{
-            System.out.println("Zugriff verweigert: Nur Lehrer dürfen  hinzufügen!");    
+            System.out.println("Zugriff verweigert: Nur Admins dürfen  hinzufügen!");    
         }
         
 
     }
 
-    public void removeSchueler(Schueler schueler){
-        schuelerListe.remove(schueler);
+    public void removeSchueler(Schueler schueler,Benutze benutzer){
+        if (benutzer.getRolle() == rolleAdmin){
+            schuelerListe.remove(schueler);
+            System.out.println("Schüler entfernt");
+
+        }else{
+            System.out.println("Zugriff verweigert: Nur Admins können Schüler entfernen");
+        }
+        
     }
 
 
-    public void addLehrer(Lehrer lehrer){
-        lehrerListe.add(lehrer);
+    public void addLehrer(Lehrer lehrer,Benutzer benutzer){
+        if(benutzer.getRolle == rolleAdmin){
+            lehrerListe.add(lehrer);
+            System.out.println("Lehrer hinzugefügt");
+        }else{
+            System.out.println("Zugiff verweigert: Nur Admins können schüler hinzufügen");
+        }
+        
     }
 
-    public void removeLehrer(Lehrer lehrer){
-        lehrerListe.remove(lehrer);
+    public void removeLehrer(Lehrer lehrer,Benutzer benutzer){
+        if(benutzer.getRolle() == rolleAdmin){
+            lehrerListe.remove(lehrer);
+            System.out.println("lehrer in die Liste hinzugefügt");
+
+        }else{
+            System.out.println("Zugriff verweigert:Nur Admnis können lerher aus der liste entfernen");
+        }
+        
     }
     
     public void addKurs(Kurs kurs){
